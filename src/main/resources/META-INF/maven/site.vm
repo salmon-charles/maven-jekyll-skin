@@ -1,0 +1,50 @@
+#macro ( yamlMenus $menus )
+#foreach( $menu in $menus )
+#if ( $menu.name )
+$menu.name:
+#foreach( $item in $menu.items )
+#set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
+#set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
+  - #topLink( $currentItemHref $item.name $item.target )
+#end
+#end
+#end
+#end
+##
+#macro ( topLink $href $name $target )
+#set ( $linkTitle = ' title="' + $name + '"' )
+#if( $target )
+#set ( $linkTarget = ' target="' + $target + '"' )
+#else
+#set ( $linkTarget = "" )
+#end
+<a href="$href" $linkTarget title="$name">$name</a>
+#end
+##
+---
+layout: page
+title: #if ( $shortTitle ) $shortTitle #else $title #end
+#if( $decoration.body && $decoration.body.menus )
+
+#yamlMenus( $decoration.body.menus ) 
+#end
+tagline:
+---
+{% include JB/setup %}
+
+<div id="bodyContent">
+	#if ( $title && $title.endsWith( "Project License" ) )
+		$bodyContent
+	#else
+    	#if ( $decoration.custom.getChild('fluidoSkin')
+          		&& $decoration.custom.getChild( 'fluidoSkin' ).getChild( 'sourceLineNumbersEnabled' )
+          		&& 'true' == $decoration.custom.getChild( 'fluidoSkin' ).getChild( 'sourceLineNumbersEnabled' ).getValue() )
+          	#set ( $sourceStyle = "prettyprint linenums" )
+    	#else
+        	#set ( $sourceStyle = "prettyprint" )
+    	#end
+
+    	$bodyContent.replaceAll( "<div class=\"source\"><pre>", "{% highlight bash %}" ).replaceAll( "</pre></div>","{% endhighlight %}" )
+    #end
+</div>
+     
