@@ -1,6 +1,9 @@
+[project page]: http://salmon-charles.github.com/maven-jekyll-skin/
+
 # Maven-Jekyll-Skin
 
-The quickest way to start and publish your Maven site on GitHub pages
+The quickest way to start and publish your Maven site on GitHub pages.
+Visit the [project page] for full documentation. 
 
 ## Getting started
 
