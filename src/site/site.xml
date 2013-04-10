@@ -35,29 +35,10 @@ under the License.
 
   <body>
 
-<!--     <menu ref="parent"/> -->
-
-    <menu name="Overview">
-      <item name="Introduction" href="./index.html"/>
-      <item name="Archive" href="./archive.html"/>
-      <item name="Categories" href="./categories.html"/>
-      <item name="Pages" href="./pages.html"/>
-      <item name="Tags" href="./tags.html"/>
+    <menu name="Doxia Markup Languages">
+      <item name="Apt" href="./apt.html" />
+      
     </menu>
 
-   <!--  <menu name="Layouts">
-      <item name="Default" href="./default/index.html"/>
-    </menu>
-
-    <menu name="Issues ITs">
-      <item name="ISSUE 1" href="./issue-1/index.html"/>
-    </menu> -->
-
-    <menu ref="reports" name="menureports"/>
-
-    <footer>
-      <div class="row span16">Apache Maven, ${project.name}, Apache, the Apache feather logo, and the Apache Maven project logos are trademarks of The Apache Software Foundation.
-      All other marks mentioned may be trademarks or registered trademarks of their respective owners.</div>
-    </footer>
   </body>
 </project>

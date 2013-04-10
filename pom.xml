@@ -78,6 +78,14 @@
           <useDefaultDelimiters>false</useDefaultDelimiters>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+        	<!-- Uncomment only for quickly tuning the velocity macro -->
+<!--           <templateFile>${basedir}/src/main/resources/META-INF/maven/site.vm</templateFile>-->
+        </configuration>
+      </plugin>
       </plugins>
   </build>
 
