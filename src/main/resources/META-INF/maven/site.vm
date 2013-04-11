@@ -1,11 +1,35 @@
-#macro ( yamlMenus $menus )
+#macro ( yamlMenusPages $menus )
 #foreach( $menu in $menus )
 #if ( $menu.name )
-$menu.name:
 #foreach( $item in $menu.items )
+#if ($item.items.size() > 0)
 #set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
 #set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
-  - #topLink( $currentItemHref $item.name $item.target )
+#set ( $submenuname = $item.name )
+  -
+    url: $currentItemHref
+    title: $item.name
+    target: $item.target
+    group: $menu.name
+    hasChildren: true
+#foreach($subitem in $item.items)
+#set ( $currentItemHref = $PathTool.calculateLink( $subitem.href, $relativePath ) )
+#set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )
+  -
+    url: $currentItemHref
+    title: $subitem.name
+    target: $subitem.target
+    group: $submenuname
+#end
+#else
+#set ( $currentItemHref = $PathTool.calculateLink( $item.href, $relativePath ) )
+#set ( $currentItemHref = $currentItemHref.replaceAll( '\\', '/' ) )        
+  -
+    url: $currentItemHref
+    title: $item.name
+    target: $item.target
+    group: $menu.name
+#end
 #end
 #end
 #end
@@ -24,10 +48,10 @@ $menu.name:
 ---
 layout: page
 title: #if ( $shortTitle ) $shortTitle #else $title #end
-#if( $decoration.body && $decoration.body.menus )
 
-#yamlMenus( $decoration.body.menus ) 
-#end
+menusPages:
+#if( $decoration.body && $decoration.body.menus )#yamlMenusPages( $decoration.body.menus )#end
+
 tagline:
 ---
 {% include JB/setup %}
