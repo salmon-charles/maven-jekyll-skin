@@ -44,7 +44,7 @@ tagline:
         	#set ( $sourceStyle = "prettyprint" )
     	#end
 
-    	$bodyContent.replaceAll( "<div class=\"source\"><pre>", "{% highlight bash %}" ).replaceAll( "</pre></div>","{% endhighlight %}" )
+        $bodyContent.replaceAll( "<div class=\"source\"><pre>", "<div class=\"source\"><pre class=\"$sourceStyle\">" ).replaceAll( "class=\"bodyTable\"", "class=\"table table-striped\"" )
     #end
 </div>
      
