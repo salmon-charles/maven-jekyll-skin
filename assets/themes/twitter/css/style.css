@@ -1,13 +1,79 @@
 /* Custom container */
-.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
+#wrap > .container {
+  padding-top: 60px;
+}
+.container .credit {
+  margin: 20px 0;
+}
 
-.container-narrow > hr {
-  margin: 30px 0; }
+code {
+  font-size: 80%;
+}
 
-.navbar .nav {
-  float: right; }
+/* Github Pure HTML & Responsive ribbon (http://codepo8.github.io/css-fork-on-github-ribbon/)
+      -------------------------------------------------- */
+#forkongithub a {
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	font-family: arial, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px 40px;
+	font-size: 1rem;
+	line-height: 2rem;
+	position: relative;
+	transition: 0.5s;
+	display:block;
+}
+
+#forkongithub a:hover {
+	background: #060;
+	color: #fff;
+}
+
+#forkongithub a::before,#forkongithub a::after {
+	content: "";
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 1px;
+	left: 0;
+	height: 1px;
+	background: #fff;
+}
+
+#forkongithub a::after {
+	bottom: 1px;
+	top: auto;
+}
+
+#forkongithub {
+	width: 100%;
+}
+
+@media screen and (min-width:980px) {
+	#forkongithub {
+		position: fixed;
+		display: block;
+		top: 0;
+		right: 0;
+		width: 200px;
+		overflow: hidden;
+		height: 200px;
+		z-index:1200;
+	}
+	#forkongithub a {
+		width: 100%;
+		position: absolute;
+		top: 60px;
+		right: -60px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+		display:inline;
+	}
+}
 
 /* posts index */
 .post > h3.title {
