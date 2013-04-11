@@ -37,7 +37,7 @@ under the License.
 
     <menu name="Doxia Markup Languages">
       <item name="Apt" href="./apt.html" />
-      
+      <item name="Markdown" href="./markdown.html" />
     </menu>
 
   </body>

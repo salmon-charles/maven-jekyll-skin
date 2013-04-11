@@ -56,19 +56,23 @@ tagline:
 ---
 {% include JB/setup %}
 
-<div id="bodyContent">
-	#if ( $title && $title.endsWith( "Project License" ) )
-		$bodyContent
-	#else
-    	#if ( $decoration.custom.getChild('fluidoSkin')
-          		&& $decoration.custom.getChild( 'fluidoSkin' ).getChild( 'sourceLineNumbersEnabled' )
-          		&& 'true' == $decoration.custom.getChild( 'fluidoSkin' ).getChild( 'sourceLineNumbersEnabled' ).getValue() )
-          	#set ( $sourceStyle = "prettyprint linenums" )
-    	#else
-        	#set ( $sourceStyle = "prettyprint" )
-    	#end
-
-        $bodyContent.replaceAll( "<div class=\"source\"><pre>", "<div class=\"source\"><pre class=\"$sourceStyle\">" ).replaceAll( "class=\"bodyTable\"", "class=\"table table-striped\"" )
-    #end
-</div>
+#set ($parsingCode = "")
+#foreach( $line in $bodyContent.replaceAll( "class=\"bodyTable\"", "class=\"table table-striped\"" ).split("\n") )
+#if ($line.matches(".*<div class=\"source\"><pre>.*") )
+$line.replaceAll( "<div class=\"source\"><pre>", "<div class=\"source\"><pre class=\"prettyprint\">" )
+#set ($parsingCode = "prettify")
+#elseif ($line.matches(".*<div class=\"source\"><pre class=.*") )
+$line.replaceAll("<div class=\"source\"><pre class=\"(.*?)\">","{% highlight $1 %}")
+#set ($parsingCode = "pygments")
+#elseif ($line.matches(".*</pre></div>.*"))
+#if ($parsingCode == "pygments" )
+$line.replaceAll("</pre></div>","{% endhighlight %}")
+#else
+$line
+#end
+#set ($parsingCode = "")
+#else
+$line
+#end
+#end
      
