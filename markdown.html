@@ -168,12 +168,75 @@ tagline:
 ---
 {% include JB/setup %}
 
-<p>Syntax highlighting</p><p>We take code blocks a step further and add syntax highlighting if you request it. In your fenced block, add an optional language identifier and well run it through syntax highlighting. For example, to syntax highlight Ruby code:</p>
-{% highlight ruby %}require 'redcarpet'
+<h1>Header 1</h1><div class="section"><h2>Header 2<a name="Header_2"></a></h2><div class="section"><h3>Header 3 ### (Hashes on right are optional)<a name="Header_3__Hashes_on_right_are_optional"></a></h3><div class="section"><h4>Header 4<a name="Header_4"></a></h4><div class="section"><h5>Header 5<a name="Header_5"></a></h5></div></div></div></div><div class="section"><h2>Markdown plus h2 with a custom ID ## {#id-goes-here}<a name="Markdown_plus_h2_with_a_custom_ID__id-goes-here"></a></h2><p><a href="#id-goes-here">Link back to H2</a></p><p>This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one line (or many), and can drone on for hours. </p><p>Here is a Markdown link to <a class="externalLink" href="http://warpedvisions.org">Warped</a>, and a literal <a class="externalLink" href="http://link.com/">http://link.com/</a>. Now some SimpleLinks, like one to [google] (automagically links to are-you- feeling-lucky), a [wiki: test] link to a Wikipedia page, and a link to [foldoc: CPU]s at foldoc. </p><p>Now some inline markup like <i>italics</i>, <b>bold</b>, and <tt>code()</tt>. Note that underscores in words are ignored in Markdown Extra.</p><p><img src="/images/photo.jpeg" alt="picture alt" /> </p>
+<blockquote><p>Blockquotes are like quoted text in email replies</p>
+  <blockquote><p>And, they can be nested</p>
+  </blockquote>
+</blockquote>
+<ul>
+  <li>Bullet lists are easy too</li>
+  <li>Another one</li>
+  <li>Another one</li>
+</ul>
+<ol style="list-style-type: decimal">
+  <li>A numbered list</li>
+  <li>Which is numbered</li>
+  <li>With periods and a space</li>
+</ol><p>And now some code:</p>
+<div class="source"><pre class="prettyprint">// Code is just text indented a bit
+which(is_easy) to_remember();
+</pre></div>
+<div class="source"><pre class="prettyprint">// Markdown extra adds un-indented code blocks too
+ 
+if (this_is_more_code == true &amp;&amp; !indented) {
+    // tild wrapped code blocks, also not indented
+}
+ 
+</pre></div>
+{% highlight ruby %}# If you specify the langage, pygments will be used instead of prettify
+require 'redcarpet'
 markdown = Redcarpet.new(&quot;Hello World!&quot;)
 puts markdown.to_html
-{% endhighlight %}
-<div class="source"><pre class="prettyprint">$ jekyll --server
-
-</pre></div>
+{% endhighlight %}<p>Text with<br />two trailing spaces<br />(on the right)<br />can be used<br />for things like poems </p><div class="section"><h3>Horizontal rules<a name="Horizontal_rules"></a></h3>
+<ul>
+  <li>
+  <ul>
+    <li>
+    <ul>
+      <li>* ****</li>
+    </ul></li>
+  </ul></li>
+</ul>
+<hr /><p>&lt;div class=custom-class markdown=1&gt; This is a div wrapping some Markdown plus. Without the DIV attribute, it ignores the block. &lt;/div&gt;</p></div></div><div class="section"><h2>Markdown plus tables<a name="Markdown_plus_tables"></a></h2>
+<table border="0" class="table table-striped">
+  <thead>
+    <tr class="a">
+      <th>Header </th>
+      <th>Header </th>
+      <th align="right">Right </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="b">
+      <td>Cell </td>
+      <td>Cell </td>
+      <td align="right">$10 </td>
+    </tr>
+    <tr class="a">
+      <td>Cell </td>
+      <td>Cell </td>
+      <td align="right">$20 </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Outer pipes on tables are optional</li>
+  <li>Colon used for alignment (right versus left)</li>
+</ul></div><div class="section"><h2>Markdown plus definition lists<a name="Markdown_plus_definition_lists"></a></h2>
+<dl><dt>Bottled water</dt><dd>$ 1.25</dd><dd>$ 1.55 (Large)</dd><dt>Milk</dt><dt>Pop</dt><dd>$ 1.75</dd>
+</dl>
+<ul>
+  <li>Multiple definitions and terms are possible</li>
+  <li>Definitions can include multiple paragraphs too</li>
+</ul></div>
      
