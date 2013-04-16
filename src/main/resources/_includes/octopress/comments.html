@@ -1,0 +1,9 @@
+{% if site.use_comments %}
+<section>
+  <h1>Comments</h1>
+  {% include octopress/custom/comments.html %}
+  {% if site.disqus.short_name %}
+    <div id="disqus_thread" aria-live="polite">{% include octopress/post/disqus_thread.html %}</div>
+  {% endif %}
+</section>
+{% endif %}
