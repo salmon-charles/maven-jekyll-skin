@@ -2,4 +2,15 @@
 layout: default
 ---
 {% include JB/setup %}
-{% include themes/twitter/post.html %}
+
+{% case site.theme.name %}
+{% when "twitter" %}
+  {% include twitter/layouts/post.html %}
+{% when "octopress" %}
+  {% include octopress/layouts/post.html %}
+{% when "custom" %}
+  {% include custom/layouts/post.html %}
+{% else %}
+  {% include twitter/layouts/post.html %}
+{% endcase %}
+

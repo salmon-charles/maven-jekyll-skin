@@ -1,0 +1,7 @@
+{% include octopress/disqus.html %}
+{% unless site.respectfully_social %}
+  {% include octopress/facebook_like.html %}
+  {% include octopress/google_plus_one.html %}
+  {% include octopress/twitter_sharing.html %}
+{% endunless %}
+{% include octopress/custom/after_footer.html %}

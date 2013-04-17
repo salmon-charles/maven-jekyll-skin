@@ -1,6 +1,16 @@
 ---
-theme :
-  name : twitter
+
 ---
 {% include JB/setup %}
-{% include themes/twitter/default.html %}
+
+{% case site.theme.name %}
+{% when "twitter" %}
+  {% include twitter/layouts/default.html %}
+{% when "octopress" %}
+  {% include octopress/layouts/default.html %}
+{% when "custom" %}
+  {% include custom/layouts/default.html %}
+{% else %}
+  {% include twitter/layouts/default.html %}
+{% endcase %}
+
