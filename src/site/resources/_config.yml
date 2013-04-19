@@ -16,7 +16,6 @@ description:
 author :
   name : Charles Salmon
   email : salmon.charles@gmail.com
-  github : salmon-charles
   twitter : username
   feedburner : feedname
 project:
@@ -24,6 +23,14 @@ project:
   
 theme:
   name: octopress
+  
+github_user : salmon-charles
+github_project_name: maven-jekyll-skin
+github_repo_count : 4
+github_skip_forks : true # Don't show repos you've forked from others
+github_show_profile_link: true
+github_repos:
+  - maven-jekyll-skin
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

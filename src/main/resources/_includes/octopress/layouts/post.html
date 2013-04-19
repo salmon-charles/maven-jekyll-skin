@@ -1,8 +1,3 @@
----
-layout: default
-single: true
----
-
 <div>
 {% include octopress/post/variables.html%}
 <article class="hentry {% if linklog %}linklog{% endif %}" role="article">
@@ -30,10 +25,6 @@ single: true
 </div>
 {% unless page.sidebar == false or site.default_sidebar == false %}
 <aside class="sidebar">
-  {% if page.sidebar == nil or page.sidebar == 'collapse' %}
-    {% include_sidebar site.post_sidebar %}
-  {% else %}
-    {% include_sidebar %}
-  {% endif %}
+{% include octopress/sidebars/post_default.html%}
 </aside>
 {% endunless %}

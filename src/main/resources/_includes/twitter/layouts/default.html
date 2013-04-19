@@ -78,8 +78,10 @@
   </head>
 
   <body>
-    <span id="forkongithub"><a href="https://github.com/{{ site.author.github }}/{{ site.project.name }}">Fork me on GitHub</a></span>
-  
+  	{% if site.github_user && site.github_project_name %}
+    	<span id="forkongithub"><a href="https://github.com/{{ site.github_user }}/{{ site.github_project_name }}">Fork me on GitHub</a></span>
+  	{% endif %}
+  	
     <!-- Part 1: Wrap all page content here -->
     <div id="wrap">
 	
