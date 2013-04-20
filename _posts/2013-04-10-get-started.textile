@@ -1,6 +1,0 @@
----
-layout: page
----
-
-H1. Get started
-
