@@ -1,6 +1,5 @@
 --- 
 layout: post
-category: test
 ---
 
 h1.Get started
