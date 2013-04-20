@@ -1,4 +1,5 @@
 <ul class="main-navigation">
-  <li><a href="{{ BASE_PATH }}">Blog</a></li>
-  <li><a href="{{ BASE_PATH }}/archives/">Archives</a></li>
+  {% assign pages_list = site.pages %}
+  {% assign group = 'navigation' %}
+  {% include JB/pages_list %}
 </ul>
