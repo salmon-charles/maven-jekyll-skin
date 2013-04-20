@@ -2,5 +2,5 @@
 layout: post
 ---
 
-h1.Get strated
+h1.Get started
 
