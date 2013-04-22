@@ -19,5 +19,4 @@
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ site.theme.name }}{% endcapture %}
     {% endif %}  
   {% endif %}
-  {% assign root_url = BASE_PATH %}
 {% endcapture %}{% assign jbcache = nil %}
