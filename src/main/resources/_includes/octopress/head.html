@@ -29,6 +29,6 @@
   <script src="{{ ASSET_PATH }}/javascripts/build/all.js"></script>
   {% include octopress/google_analytics.html %}
   {% include octopress/gauges_analytics.html %}
-  {% unless favicon %}{% capture favicon %}{{ root_url }}/octopress-favicon.png{% endcapture %} {% endunless %}
+  {% unless favicon %}{% capture favicon %}{{ BASE_PATH }}/octopress-favicon.png{% endcapture %} {% endunless %}
   <link href="{{favicon}}" rel="icon">
 </head>

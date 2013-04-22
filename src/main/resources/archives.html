@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Blog Archive
+title: Archives
 footer: false
 body_id: archive
+header : Post Archive
+group: navigation
 ---
+{% include JB/setup %}
 
 <div id="blog-archives">
 {% for post in site.posts reverse %}
@@ -12,9 +15,9 @@ body_id: archive
   {% assign year = this_year %}
   <h2>{{ year }}</h2>
 {% endunless %}
-{% include post/variables.html %}
+{% include octopress/post/variables.html %}
 <article {% if linklog %}data-linklog{% endif %}>
-  {% include archive_post.html %}
+  {% include octopress/archive_post.html %}
 </article>
 {% endfor %}
 </div>
