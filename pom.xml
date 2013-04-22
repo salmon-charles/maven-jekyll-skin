@@ -29,8 +29,8 @@
   <artifactId>maven-jekyll-skin</artifactId>
   <version>0.9-SNAPSHOT</version>
 
-  <name>Maven Jetyll skin</name>
-  <description>A skin to generate a jetyll web site for a maven project</description>
+  <name>Maven Jekyll skin</name>
+  <description>A skin to generate a jekyll web site for a maven project</description>
   <inceptionYear>2013</inceptionYear>
   
   <properties>
